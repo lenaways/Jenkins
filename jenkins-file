@@ -1,10 +1,14 @@
-# jenkins kurulum
-yum update -y
-amazon-linux-extras install java-openjdk11 -y
-wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
-rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
-amazon-linux-extras install epel -y
-yum install jenkins -y
-systemctl start jenkins
-systemctl enable jenkins
-systemctl status jenkins
+# Installing Jenkins Server on Amazon Linux2 with 'yum' Repo
+
+
+ssh -i "key.pem" ec2-user@<IP.ADRESS.>
+sudo yum update -y
+sudo amazon-linux-extras install java-openjdk11 -y
+java -version
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
+sudo amazon-linux-extras install epel -y
+sudo yum install jenkins -y
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+sudo systemctl status jenkins
